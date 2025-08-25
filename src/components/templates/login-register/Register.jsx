@@ -104,7 +104,7 @@ function Register({ showLoginForm }) {
             {/* <!-- Footer --> */}
             <div className="max-w-[330px] w-full mx-auto text-center mt-7 text-gray-600 dark:text-gray-300 text-sm">
                 با عضویت در سایت، تمامی قوانین و شرایط استفاده از خدمات
-                <a href="https://sabzlearn.ir" className="text-green-500 hover:underline">کدپلاس</a> را پذیرفته‌اید.
+                <a href="/" className="text-green-500 hover:underline">کدپلاس</a> را پذیرفته‌اید.
             </div>
 
             {/* <!-- Background Effects --> */}

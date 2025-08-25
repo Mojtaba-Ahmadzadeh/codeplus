@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { GraduationCap, Moon, Sun, ShoppingCart, User, Menu, Trash2 } from 'lucide-react';
 import { ThemeContext } from '@/context/ThemeContext';
 import { useContext } from 'react';
+import MobileMenu from './MobileMenu';
 function Navbar() {
 
     const { theme, toggleTheme } = useContext(ThemeContext);
@@ -15,145 +16,7 @@ function Navbar() {
             <div className="max-w-7xl mx-auto">
 
                 {/* <!-- ✅ Mobile Only: Special Layout --> */}
-                <div className="w-full flex items-center justify-between md:hidden mb-4">
-
-                    {/* Hamburger Menu - Right */}
-                    <button
-                        aria-label="Open mobile menu"
-                        id="mobile-menu-button"
-                        className="w-11 h-11 flex items-center justify-center rounded-full
-                   bg-gray-200 dark:bg-gray-700
-                   text-gray-800 dark:text-gray-100
-                   hover:bg-gray-300 dark:hover:bg-gray-600
-                   focus:outline-none focus:ring-2 focus:ring-primary p-2 transition"
-                    >
-                        <Menu className="w-5 h-5" />
-                    </button>
-
-                    {/* Logo - Center */}
-                    <div className="text-xl font-extrabold text-primary cursor-pointer select-none tracking-wide flex items-center gap-2">
-                        <GraduationCap className="text-green-600 dark:text-green-400 w-8 h-8" />
-                        کدپلاس
-                    </div>
-
-                    {/* Shopping Cart - Left */}
-                    <div className="relative group z-20" id="cart">
-                        <button
-                            type="button"
-                            className="w-11 h-11 flex items-center justify-center rounded-full
-                       bg-gray-200 dark:bg-gray-700
-                       text-gray-800 dark:text-gray-100
-                       hover:bg-gray-300 dark:hover:bg-gray-600
-                       focus:outline-none focus:ring-2 focus:ring-primary p-2 transition"
-                        >
-                            <ShoppingCart className="w-5 h-5" />
-                        </button>
-
-                        {/* Cart Badge */}
-                        <div
-                            id="cart-badge"
-                            className="absolute top-2.5 right-2.5 size-1.5 rounded-full bg-green-500"
-                        ></div>
-
-                        {/* Cart Dropdown */}
-                        <div
-                            id="cart-dropdown"
-                            className="absolute left-0 top-full pt-4 z-10 opacity-0 scale-95 invisible transition-all duration-300
-                       group-hover:opacity-100 group-hover:scale-100 group-hover:visible"
-                        >
-                            <div className="w-80 xs:w-[362px] bg-white dark:bg-gray-800 rounded-2xl shadow-md overflow-hidden">
-
-                                {/* Header */}
-                                <div className="flex items-center justify-between px-5 py-4 bg-sky-50 dark:bg-sky-500/10 text-sky-500 dark:text-sky-400 mb-4 rounded-t-2xl">
-                                    <span className="font-danaBold text-base">سبد خرید من</span>
-                                    <span className="font-danaDemiBold text-sm text-slate-500 dark:text-gray-400">
-                                        ۲ دوره
-                                    </span>
-                                </div>
-
-                                {/* Items */}
-                                <div className="cart-body pl-5 pr-2.5 mr-2.5 space-y-3 max-h-64 overflow-y-auto direction-ltr child:direction-rtl">
-
-                                    {/* Item 1 */}
-                                    <div className="cart-item flex items-start gap-x-3">
-                                        <a href="https://sabzlearn.ir/course/contract-writing-techniques-for-programmers/" className="shrink-0">
-                                            <img
-                                                className="h-12 w-20 rounded-md object-cover"
-                                                src="https://sabzlearn.ir/wp-content/uploads/2025/07/25-1-300x169.webp"
-                                                alt="تکنیک های قرارداد نویسی برای برنامه نویسان"
-                                            />
-                                        </a>
-                                        <div className="flex flex-col justify-between text-xs sm:text-sm leading-relaxed">
-                                            <a href="https://sabzlearn.ir/course/contract-writing-techniques-for-programmers/" className="line-clamp-2 font-danaMedium text-gray-800 dark:text-gray-100">
-                                                تکنیک های قرارداد نویسی برای برنامه نویسان
-                                            </a>
-                                            <div className="flex items-center gap-x-2 text-slate-500 dark:text-gray-400 mt-1">
-                                                <span className="font-danaMedium">۸۰۰,۰۰۰</span>
-                                                <span className="font-danaMedium text-xs">تومان</span>
-                                            </div>
-                                        </div>
-                                        <button
-                                            type="button"
-                                            aria-label="Remove"
-                                            className="ml-auto mt-1 flex items-center justify-center w-8 h-8 rounded-full
-                                       text-gray-400 dark:text-gray-500
-                                       hover:text-red-500 hover:bg-gray-200 dark:hover:bg-gray-700
-                                       transition-colors duration-200"
-                                        >
-                                            <Trash2 className="w-4 h-4" />
-                                        </button>
-                                    </div>
-
-                                    {/* Item 2 */}
-                                    <div className="cart-item flex items-start gap-x-3">
-                                        <a href="https://sabzlearn.ir/course/design-pattern/" className="shrink-0">
-                                            <img
-                                                className="h-12 w-20 rounded-md object-cover"
-                                                src="https://sabzlearn.ir/wp-content/uploads/2025/07/4-1-300x169.webp"
-                                                alt="آموزش جامع دیزاین پترن ها برای برنامه نویسان"
-                                            />
-                                        </a>
-                                        <div className="flex flex-col justify-between text-xs sm:text-sm leading-relaxed">
-                                            <a href="https://sabzlearn.ir/course/design-pattern/" className="line-clamp-2 font-danaMedium text-gray-800 dark:text-gray-100">
-                                                آموزش جامع دیزاین پترن ها برای برنامه نویسان
-                                            </a>
-                                            <div className="flex items-center gap-x-2 text-slate-500 dark:text-gray-400 mt-1">
-                                                <span className="font-danaMedium">۱,۲۰۰,۰۰۰</span>
-                                                <span className="font-danaMedium text-xs">تومان</span>
-                                            </div>
-                                        </div>
-                                        <button
-                                            type="button"
-                                            aria-label="Remove"
-                                            className="ml-auto mt-1 flex items-center justify-center w-8 h-8 rounded-full
-                                       text-gray-400 dark:text-gray-500
-                                       hover:text-red-500 hover:bg-gray-200 dark:hover:bg-gray-700
-                                       transition-colors duration-200"
-                                        >
-                                            <Trash2 className="w-4 h-4" />
-                                        </button>
-                                    </div>
-                                </div>
-
-                                {/* Footer */}
-                                <div className="mt-5 px-5 pb-5">
-                                    <div className="flex items-center justify-between border-t border-neutral-200 dark:border-white/10 pt-4 mb-4">
-                                        <span className="text-sm text-gray-700 dark:text-gray-300">مبلغ قابل پرداخت:</span>
-                                        <span className="text-lg font-danaDemiBold text-gray-900 dark:text-white">
-                                            ۱,۹۰۰,۰۰۰ <span className="text-base font-danaMedium">تومان</span>
-                                        </span>
-                                    </div>
-                                    <a
-                                        href="https://sabzlearn.ir/cart"
-                                        className="w-full block text-center bg-sky-500 hover:bg-sky-600 text-white py-2 rounded-xl transition-colors font-danaBold text-sm"
-                                    >
-                                        مشاهده سبد خرید
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <MobileMenu />
 
                 {/* <!-- ✅ ساختار اصلی (برای دسکتاپ و تبلت) --> */}
                 <div className="hidden md:flex justify-between items-center">
@@ -366,6 +229,7 @@ function Navbar() {
                         {/* <!-- آیتم‌های منو... --> */}
                         {/* <!-- ... (بقیه آیتم‌ها رو اینجا بذار مثل دوره‌ها، مقالات، تماس با ما) --> */}
                     </ul>
+
                     {/* <!-- آیکن‌ها --> */}
                     <div className="flex items-center gap-6">
 
@@ -388,7 +252,7 @@ function Navbar() {
                         <div className="flex items-center gap-4 text-xl">
                             <div className="relative group z-20" id="cart">
                                 {/* <!-- Cart Button --> */}
-                                <button
+                                <Link href='/shoppingCart'
                                     id="cart-toggle"
                                     type="button"
                                     aria-label="سبد خرید"
@@ -400,7 +264,7 @@ function Navbar() {
                 p-2 transition transform duration-300 hover:scale-110 hover:rotate-6"
                                 >
                                     <ShoppingCart className="w-5 h-5" />
-                                </button>
+                                </Link>
 
                                 {/* <!-- Badge --> */}
                                 <div id="cart-badge" className="absolute top-2.5 right-2.5 size-1.5 rounded-full bg-green-500"></div>
@@ -492,7 +356,7 @@ function Navbar() {
 
                             <div className="relative group hidden md:block z-50" id="user-profile">
 
-                                <button
+                                <Link href='/p-user'
                                     type="button"
                                     aria-label="حساب کاربری"
                                     className="w-11 h-11 flex items-center justify-center rounded-full
@@ -503,7 +367,7 @@ function Navbar() {
                 transition transform duration-300 hover:scale-110 hover:rotate-6"
                                 >
                                     <User className="w-5 h-5" />
-                                </button>
+                                </Link>
 
                                 <div className="absolute -left-10 top-full pt-3 z-10 transition-all duration-300 
                         opacity-0 invisible translate-y-2 
@@ -548,7 +412,7 @@ function Navbar() {
                             </div>
 
                             <Link
-                                href="/login"
+                                href="/login-register"
                                 aria-label="ورود و عضویت"
                                 className="hidden md:flex items-center gap-2 px-4 py-2 
                 rounded-lg font-medium text-sm text-white 

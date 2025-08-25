@@ -44,11 +44,6 @@ function Login({ showRegisterForm }) {
                         {/* <!-- Submit --> */}
                         <button type="submit" className="w-full py-2 rounded-lg bg-green-600 hover:bg-green-700 text-white font-medium transition-colors">ادامه</button>
                     </form>
-
-                    <div className="flex items-center justify-between text-sm text-gray-500 dark:text-gray-400 mt-5">
-                        <a href="https://sabzlearn.ir/login/email">ورود با ایمیل</a>
-                        <a href="https://sabzlearn.ir/terms-conditions/" className="underline underline-offset-2">حریم خصوصی</a>
-                    </div>
                 </div>
 
                 {/* <!-- Step 2: OTP --> */}
@@ -85,7 +80,7 @@ function Login({ showRegisterForm }) {
             {/* <!-- Footer --> */}
             <div className="max-w-[330px] w-full mx-auto text-center mt-7 text-gray-600 dark:text-gray-300 text-sm">
                 با عضویت در سایت، تمامی قوانین و شرایط استفاده از خدمات
-                <a href="https://sabzlearn.ir" className="text-green-500 hover:underline">کدپلاس</a> را پذیرفته‌اید.
+                <a href="/" className="text-green-500 hover:underline">کدپلاس</a> را پذیرفته‌اید.
             </div>
 
             {/* <!-- Background Effects --> */}

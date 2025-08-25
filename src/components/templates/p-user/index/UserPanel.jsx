@@ -1,4 +1,5 @@
-import React from 'react'
+"use client"
+import React, { useContext, useState } from 'react'
 
 // Modules
 import Sidebar from '@/components/modules/p-user/sidebar/Sidebar'
@@ -7,6 +8,7 @@ import UserStates from './UserStates'
 import RecentlyViewed from './RecentlyViewed'
 import RecentTickets from './RecentTickets'
 import RecentQuestions from './RecentQuestions'
+import { ThemeContext } from '@/context/ThemeContext'
 
 function Index() {
     return (

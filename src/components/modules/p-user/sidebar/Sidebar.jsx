@@ -95,7 +95,7 @@ export default function Sidebar() {
                             group-hover:text-green-500 dark:group-hover:text-green-500
                             transition-colors">تیکت ها</span>
                         </a>
-                        <a href="/questions" className="flex items-center gap-x-2.5 py-1.5 group
+                        <a href="/p-user/questions" className="flex items-center gap-x-2.5 py-1.5 group
                         text-gray-700 dark:text-gray-300 hover:text-green-500 dark:hover:text-green-500
                         transition-colors">
                             <span className="active-badge block w-0.5 h-5 ml-1 rounded-full bg-transparent"></span>
@@ -108,7 +108,7 @@ export default function Sidebar() {
                             group-hover:text-green-500 dark:group-hover:text-green-500
                             transition-colors">پرسش و پاسخ ها</span>
                         </a>
-                        <a href="/sessions" className="flex items-center gap-x-2.5 py-1.5 group
+                        <a href="" className="flex items-center gap-x-2.5 py-1.5 group
                         text-gray-700 dark:text-gray-300 hover:text-green-500 dark:hover:text-green-500
                         transition-colors">
                             <span className="active-badge block w-0.5 h-5 ml-1 rounded-full bg-transparent"></span>
