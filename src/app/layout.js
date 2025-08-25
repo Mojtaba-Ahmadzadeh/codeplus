@@ -1,15 +1,7 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import Navbar from "@/components/modules/navbar/Navbar";
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import Footer from "@/components/modules/footer/Footer";
+import ClientWrapper from "@/components/templates/clientWrapper/ClientWrapper";
 
 export const metadata = {
   title: "Create Next App",
@@ -18,11 +10,38 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+    <html lang="fa" dir="rtl">
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function () {
+                try {
+                  const theme = localStorage.getItem('theme');
+                  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                  if (theme === 'dark' || (!theme && prefersDark)) {
+                    document.documentElement.classList.add('dark');
+                  } else {
+                    document.documentElement.classList.remove('dark');
+                  }
+                } catch (e) {}
+              })();
+            `,
+          }}
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+          rel="stylesheet"
+        />
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        />
+      </head>
+      <body className="bg-gray-100 dark:bg-[#070E1C] transition-all">
+        <ClientWrapper>
         {children}
+        </ClientWrapper>
       </body>
     </html>
   );
